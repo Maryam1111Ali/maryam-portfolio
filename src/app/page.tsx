@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -310,7 +309,7 @@ export default function Home() {
           }),
       });
 
-      const result = await response.json();
+      await response.json();
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -341,7 +340,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-5xl font-bold mb-8 hover:text-purple-400 transition-colors duration-300"
           >
-            Hi, I'm Maryam Amanat
+            Hi, I&apos;m Maryam Amanat
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -1203,8 +1202,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-100 text-lg mb-8"
           >
-            I'm always interested in new opportunities and exciting backend development projects. 
-            Let's discuss how we can work together to build scalable APIs and robust backend systems.
+            I&apos;m always interested in new opportunities and exciting backend development projects. 
+            Let&apos;s discuss how we can work together to build scalable APIs and robust backend systems.
           </motion.p>
           
           {/* Contact Form */}
@@ -1217,7 +1216,7 @@ export default function Home() {
               <CardHeader>
                 <CardTitle className="text-white">Send me a message</CardTitle>
                 <CardDescription className="text-gray-300">
-                  Fill out the form below and I'll get back to you as soon as possible.
+                  Fill out the form below and I&apos;ll get back to you as soon as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1284,7 +1283,7 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       className="text-green-400 text-sm text-center"
                     >
-                      ✅ Message sent successfully! I'll get back to you soon.
+                      ✅ Message sent successfully! I&apos;ll get back to you soon.
                     </motion.div>
                   )}
                   
@@ -1375,6 +1374,7 @@ export default function Home() {
               {/* Left side - Images */}
               <div className="w-1/2 p-4 border-r">
                 <div className="relative h-96">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={projectData[selectedProject as keyof typeof projectData]?.images[currentImageIndex]?.src}
                     alt={projectData[selectedProject as keyof typeof projectData]?.images[currentImageIndex]?.alt}
@@ -1420,6 +1420,7 @@ export default function Home() {
                         index === currentImageIndex ? 'border-blue-500' : 'border-gray-300'
                       }`}
                     >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={image.src}
                         alt={image.alt}
