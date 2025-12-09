@@ -301,12 +301,12 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
             to: 'maryamamanat692@gmail.com',
-          }),
+        }),
       });
 
       await response.json();
