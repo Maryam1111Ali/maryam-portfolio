@@ -12,7 +12,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-black border-b border-gray-800 sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+    <nav className="bg-[#0a0a1a] border-b border-purple-900/30 sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
       {/* This div contains all the navbar content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -20,62 +20,50 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4">
           {/* This is the title/logo section */}
           <div className="text-white font-bold text-xl sm:text-2xl tracking-tight">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-white px-3 py-1 rounded text-[#0a0a1a] font-extrabold">
               Maryam Amanat
             </span>
           </div>
 
           {/* This is the navigation menu */}
-          <div className="hidden md:flex items-center gap-1 lg:gap-2">
+          <div className="hidden md:flex items-center gap-6">
             {/* Each link is a button that scrolls to sections */}
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative group"
             >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></span>
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative group"
             >
               About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></span>
             </button>
             <button 
               onClick={() => scrollToSection('skills')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative group"
             >
               Skills
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></span>
             </button>
             <button 
               onClick={() => scrollToSection('projects')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 relative group"
             >
               Projects
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button 
-              onClick={() => scrollToSection('experience')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
-            >
-              Experience
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button 
-              onClick={() => scrollToSection('education')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
-            >
-              Education
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></span>
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 relative group"
+              className="bg-white text-[#0a0a1a] px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:bg-purple-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center gap-2"
             >
-              Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Hire Me
             </button>
           </div>
 
@@ -88,7 +76,7 @@ export default function Navbar() {
                   menu.classList.toggle('hidden');
                 }
               }}
-              className="text-gray-300 hover:text-white p-2"
+              className="text-purple-300 hover:text-purple-200 p-2"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -102,45 +90,39 @@ export default function Navbar() {
           <div className="flex flex-col gap-2">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-purple-900/20 text-left"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-purple-900/20 text-left"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('skills')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-purple-900/20 text-left"
             >
               Skills
             </button>
             <button 
               onClick={() => scrollToSection('projects')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-purple-900/20 text-left"
             >
               Projects
             </button>
             <button 
-              onClick={() => scrollToSection('experience')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              onClick={() => scrollToSection('contact')}
+              className="text-purple-300 hover:text-purple-200 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-purple-900/20 text-left"
             >
-              Experience
-            </button>
-            <button 
-              onClick={() => scrollToSection('education')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
-            >
-              Education
+              Contact
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-gray-800 text-left"
+              className="bg-white text-[#0a0a1a] px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:bg-purple-200 mt-2"
             >
-              Contact
+              Hire Me
             </button>
           </div>
         </div>

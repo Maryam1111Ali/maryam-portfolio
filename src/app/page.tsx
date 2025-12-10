@@ -332,67 +332,234 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gray-100">
+    <main className="bg-[#0a0a1a] min-h-screen">
       {/* Navbar */}
       <Navbar />
       
       {/* Hero Section */}
-      <section id="home" className="bg-black text-white py-30">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <motion.h1 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-8 hover:text-purple-400 transition-colors duration-300"
-          >
-            Hi, I&apos;m Maryam Amanat
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl mb-8"
-          >
-            Software Engineer specializing in Python, Django, and Machine Learning
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+      <section id="home" className="relative bg-gradient-to-b from-[#0a0a1a] via-[#1a0a2e] to-[#0a0a1a] text-white py-20 overflow-hidden">
+        {/* Animated background particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_20px_rgba(34,211,238,0.8)]"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_20px_rgba(168,85,247,0.8)]"></div>
+          <div className="absolute bottom-20 left-1/4 w-2 h-2 bg-pink-400 rounded-full animate-pulse shadow-[0_0_20px_rgba(244,114,182,0.8)]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
             >
-              <Button 
-                onClick={copyEmailToClipboard}
-                className={`bg-white text-black hover:bg-purple-500 transition-all duration-300 ${
-                  emailCopied ? 'bg-green-500 text-white' : ''
-                }`}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex items-center gap-2"
               >
-                {emailCopied ? 'Email Copied! 📧' : 'Get In Touch'}
-              </Button>
+                <span className="text-purple-300 text-lg">Hello,</span>
+                <span className="text-2xl animate-bounce">👋</span>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
+              >
+                <span className="bg-gradient-to-r from-purple-300 via-cyan-300 to-pink-300 bg-clip-text text-transparent">
+                  I&apos;m a
+                </span>
+                <br />
+                <span className="text-purple-200 drop-shadow-[0_0_30px_rgba(196,181,253,0.5)]">
+                  Software Engineer
+                </span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-xl text-purple-200/80"
+              >
+                Building scalable backend systems and robust APIs
+              </motion.p>
+              
+              {/* Social Media Icons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex gap-4 pt-4"
+              >
+                {[
+                  { name: 'GitHub', icon: '💻', url: 'https://github.com' },
+                  { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
+                  { name: 'Twitter', icon: '🐦', url: 'https://twitter.com' },
+                  { name: 'Email', icon: '📧', url: 'mailto:maryamamanat692@gmail.com' }
+                ].map((social, index) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, y: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-12 h-12 rounded-full bg-purple-900/50 border border-purple-500/30 flex items-center justify-center text-xl hover:bg-purple-800/50 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
+                  >
+                    {social.icon}
+                  </motion.a>
+                ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right Side - Visual Element */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative w-full h-[500px] flex items-center justify-center">
+                {/* Glowing background circle */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+                
+                {/* Main visual container */}
+                <div className="relative z-10 w-80 h-80 rounded-full border-4 border-cyan-400/50 shadow-[0_0_50px_rgba(34,211,238,0.5)] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-cyan-600/30"></div>
+                  {/* Placeholder for profile image - you can replace this with an actual image */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-8xl">👩‍💻</div>
+                  </div>
+                  
+                  {/* Animated neon lines */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 320 320">
+                    <motion.path
+                      d="M160,80 Q200,120 240,160 Q200,200 160,240 Q120,200 80,160 Q120,120 160,80"
+                      stroke="rgba(34,211,238,0.6)"
+                      strokeWidth="2"
+                      fill="none"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={{ pathLength: 1, opacity: 1 }}
+                      transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                    />
+                  </svg>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-16 bg-[#0a0a1a] border-y border-purple-900/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center md:text-left"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2"
+              >
+                3+
+              </motion.div>
+              <p className="text-purple-200/60 text-sm uppercase tracking-wider">Years of Experience</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center md:text-left"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2"
+              >
+                12+
+              </motion.div>
+              <p className="text-purple-200/60 text-sm uppercase tracking-wider">Projects Completed Around The World</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section className="py-16 bg-[#0a0a1a]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-center mb-12 text-purple-200"
+          >
+            Technology Stack
+          </motion.h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { name: 'Python', icon: '🐍', gradient: 'from-yellow-400 to-blue-500' },
+              { name: 'Django', icon: '🌐', gradient: 'from-green-400 to-green-600' },
+              { name: 'JavaScript', icon: 'JS', gradient: 'from-yellow-300 to-yellow-500' },
+              { name: 'React', icon: '⚛️', gradient: 'from-cyan-400 to-blue-500' },
+              { name: 'PostgreSQL', icon: '🐘', gradient: 'from-blue-400 to-blue-600' },
+              { name: 'Docker', icon: '🐳', gradient: 'from-blue-400 to-cyan-500' },
+              { name: 'Git', icon: '📦', gradient: 'from-orange-400 to-red-500' },
+              { name: 'Machine Learning', icon: '🤖', gradient: 'from-purple-400 to-pink-500' }
+            ].map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.15, y: -5 }}
+                className={`w-16 h-16 rounded-full bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-2xl font-bold shadow-lg hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 cursor-pointer border-2 border-purple-500/30`}
+              >
+                {tech.icon}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-30 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="about" className="py-20 bg-gradient-to-b from-[#0a0a1a] to-[#1a0a2e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-8 text-white"
+            className="text-4xl font-bold text-center mb-8"
           >
-            About Me
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              About Me
+            </span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-100 text-lg text-center max-w-2xl mx-auto"
+            className="text-purple-200/90 text-lg text-center max-w-2xl mx-auto leading-relaxed"
           >
             Motivated and detail-oriented developer with experience in Python, Django, and Machine Learning projects. 
             Resourceful Django Backend Developer with hands-on experience building scalable APIs, secure authentication systems, 
@@ -404,30 +571,36 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-30 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="skills" className="py-20 bg-[#1a0a2e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-20 text-white"
+            className="text-4xl font-bold text-center mb-16"
           >
-            My Skills
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              My Skills
+            </span>
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="h-full"
             >
-              <Card className="bg-white hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 h-full flex flex-col backdrop-blur-sm">
                 <CardHeader className="text-center">
-                  <div className="text-4xl mb-2">⚙️</div>
-                  <CardTitle>Backend Development</CardTitle>
+                  <div className="text-5xl mb-4">⚙️</div>
+                  <CardTitle className="text-purple-200 text-xl">Backend Development</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center flex-1 flex flex-col justify-center">
-                  <p className="text-gray-600">Python (Experienced), Django (Experienced), Django REST Framework (Expert), JWT (Experienced), Sockets (Skillful)</p>
+                  <p className="text-purple-200/80 leading-relaxed">Python (Experienced), Django (Experienced), Django REST Framework (Expert), JWT (Experienced), Sockets (Skillful)</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -435,15 +608,16 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="h-full"
             >
-              <Card className="bg-white hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-cyan-900/40 to-cyan-800/20 border border-cyan-500/30 hover:border-purple-400/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all duration-300 h-full flex flex-col backdrop-blur-sm">
                 <CardHeader className="text-center">
-                  <div className="text-4xl mb-2">💻</div>
-                  <CardTitle>Web & Development</CardTitle>
+                  <div className="text-5xl mb-4">💻</div>
+                  <CardTitle className="text-cyan-200 text-xl">Web & Development</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center flex-1 flex flex-col justify-center">
-                  <p className="text-gray-600">Web Development (Skillful), Backend Development (Skillful), Machine Learning (Skillful), Data Visualization (Skillful)</p>
+                  <p className="text-cyan-200/80 leading-relaxed">Web Development (Skillful), Backend Development (Skillful), Machine Learning (Skillful), Data Visualization (Skillful)</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -451,15 +625,16 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="h-full"
             >
-              <Card className="bg-white hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-pink-900/40 to-pink-800/20 border border-pink-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 h-full flex flex-col backdrop-blur-sm">
                 <CardHeader className="text-center">
-                  <div className="text-4xl mb-2">🛠️</div>
-                  <CardTitle>Tools & Design</CardTitle>
+                  <div className="text-5xl mb-4">🛠️</div>
+                  <CardTitle className="text-pink-200 text-xl">Tools & Design</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center flex-1 flex flex-col justify-center">
-                  <p className="text-gray-600">Git (Expert), Docker (Experienced), Figma (Skillful), Canva Design (Expert)</p>
+                  <p className="text-pink-200/80 leading-relaxed">Git (Expert), Docker (Experienced), Figma (Skillful), Canva Design (Expert)</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -468,15 +643,21 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-30 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="projects" className="py-20 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a1a] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/3 right-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-16"
           >
-            My Projects
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              My Projects
+            </span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
@@ -486,7 +667,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
          <div 
            className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600 cursor-pointer hover:opacity-90 transition-opacity"
            onClick={() => openProjectModal('mehrum-app')}
@@ -514,13 +695,13 @@ export default function Home() {
            </div>
          </div>
                 <CardHeader>
-                  <CardTitle>Mehrum App</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Mehrum App</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Matchmaking/Matrimonial Platform - Complete Backend Development with Django REST, real-time chat, and admin workflows.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Built the entire Django REST backend including user authentication, prospect profile management, admin verification workflows, 
                     real-time chat using Socket.IO, and push notifications for mobile and web platforms.
                   </p>
@@ -533,7 +714,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://rishta-app-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -541,7 +722,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/rishta-app', '_blank')}
                     >
                       📁 GitHub
@@ -557,7 +738,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-orange-500 to-red-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('nestly')}
@@ -587,13 +768,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Nestly</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Nestly</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     A comprehensive real estate platform with advanced authentication, social logins, and property management system.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Real Estate Platform Backend with AI-powered property search, dynamic questionnaire system for personalized recommendations, 
                     Google & Facebook login integration, and MLS data integration.
                   </p>
@@ -606,7 +787,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://nestly-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -614,7 +795,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/nestly', '_blank')}
                     >
                       📁 GitHub
@@ -630,7 +811,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-teal-500 to-indigo-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('listico')}
@@ -661,13 +842,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Listico</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Listico</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     A comprehensive property management platform with advanced features and admin dashboard.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Canadian Real Estate Platform with advanced search filters, property CRUD with admin approval, 
                     social logins (Google, Facebook, GitHub), AI-powered chatbot, Cloudinary image uploads, and real-time buyer-agent chat.
                   </p>
@@ -680,7 +861,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://listico-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -688,7 +869,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/listico', '_blank')}
                     >
                       📁 GitHub
@@ -704,7 +885,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-green-500 to-blue-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('arabsocials')}
@@ -733,13 +914,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Arab Socials</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Arab Socials</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Social Media Platform with country-based restrictions and complete post module with nested comments.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Social Media Platform with country-based restrictions for group registration, complete post module with CRUD operations, 
                     nested comments system, and like/unlike functionality.
                   </p>
@@ -752,7 +933,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://arabsocials-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -760,7 +941,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/arabsocials', '_blank')}
                     >
                       📁 GitHub
@@ -776,7 +957,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('booking-app')}
@@ -804,13 +985,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Organization-Based Booking System</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Organization-Based Booking System</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Multi-organization booking structure where each organization manages its own booking workflows.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Implemented multi-organization booking structure where each organization manages its own booking workflows. 
                     Created endpoints for booking creation, user–organization linking, and schedule management. 
                     Ensured clean authentication, validation, and organization ID auto-generation with strict constraints.
@@ -824,7 +1005,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://booking-app-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -832,7 +1013,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/booking-app', '_blank')}
                     >
                       📁 GitHub
@@ -848,7 +1029,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-purple-500 to-pink-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('ai-education-recommendation')}
@@ -877,13 +1058,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>AI-Based Education Recommendation System</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">AI-Based Education Recommendation System</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Final Year Project (FYP) - AI-powered career recommendation platform with OpenAI integration and real-time counselor matching.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Django backend with OpenAI integration providing AI-based career recommendations based on student questionnaire responses. 
                     Features real-time career counselor matching, meeting alignment system, and personalized guidance platform.
                   </p>
@@ -896,7 +1077,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://ai-education-recommendation-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -904,7 +1085,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/ai-education-recommendation', '_blank')}
                     >
                       📁 GitHub
@@ -920,7 +1101,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-blue-500 to-cyan-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('sentiment-analysis')}
@@ -949,13 +1130,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Sentiment Analysis on Twitter Dataset</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Sentiment Analysis on Twitter Dataset</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Machine Learning project performing sentiment analysis on 5,000 Twitter tweets dataset.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     ML project analyzing sentiment on 5k Twitter dataset. Includes data preprocessing, feature extraction, 
                     multiple ML model training, and sentiment classification (positive, negative, neutral) with performance evaluation.
                   </p>
@@ -968,7 +1149,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://sentiment-analysis-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -976,7 +1157,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/sentiment-analysis', '_blank')}
                     >
                       📁 GitHub
@@ -992,7 +1173,7 @@ export default function Home() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="transition-all duration-300 h-full"
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              <Card className="bg-gradient-to-br from-purple-900/30 to-purple-800/10 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 overflow-hidden h-full flex flex-col backdrop-blur-sm">
                 <div 
                   className="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600 cursor-pointer hover:opacity-90 transition-opacity"
                   onClick={() => openProjectModal('ml-models-training')}
@@ -1020,13 +1201,13 @@ export default function Home() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>Machine Learning Models Training</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-purple-200">Machine Learning Models Training</CardTitle>
+                  <CardDescription className="text-purple-300/70">
                     Collection of machine learning training projects demonstrating various algorithms and techniques.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <p className="text-gray-800 mb-4">
+                  <p className="text-purple-200/90 mb-4">
                     Various small-scale ML projects showcasing different algorithms, data preprocessing techniques, 
                     feature engineering, model evaluation, hyperparameter tuning, and comparative analysis.
                   </p>
@@ -1039,7 +1220,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <Button 
                       size="sm" 
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       onClick={() => window.open('https://ml-models-training-demo.com', '_blank')}
                     >
                       🌐 Live Demo
@@ -1047,7 +1228,7 @@ export default function Home() {
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="border-gray-300 hover:bg-gray-50"
+                      className="border-purple-500/50 text-purple-200 hover:bg-purple-900/30 hover:border-cyan-400/50 hover:text-cyan-200 transition-all duration-300"
                       onClick={() => window.open('https://github.com/yourusername/ml-models-training', '_blank')}
                     >
                       📁 GitHub
@@ -1061,97 +1242,154 @@ export default function Home() {
       </section>
 
       {/* Employment History Section */}
-      <section id="experience" className="py-30 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="experience" className="py-20 bg-gradient-to-b from-[#0a0a1a] to-[#1a0a2e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-12"
           >
-            Employment History
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Employment History
+            </span>
           </motion.h2>
           <div className="space-y-8">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300">
+              <Card className="relative bg-gradient-to-br from-purple-900/40 to-purple-800/20 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] transition-all duration-500 backdrop-blur-sm overflow-hidden group">
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"></div>
+                
                 <CardHeader>
-                  <div className="flex justify-between items-start flex-wrap gap-4">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="flex justify-between items-start flex-wrap gap-4 relative z-10"
+                  >
                     <div>
-                      <CardTitle className="text-2xl">Backend Developer</CardTitle>
-                      <CardDescription className="text-lg mt-1">Techanzy Limited</CardDescription>
+                      <CardTitle className="text-2xl text-purple-200 group-hover:text-cyan-200 transition-colors duration-300">Backend Developer</CardTitle>
+                      <CardDescription className="text-lg mt-1 text-purple-300/70 group-hover:text-purple-300 transition-colors duration-300">Techanzy Limited</CardDescription>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-semibold text-gray-700">Jun 2025 — Present</p>
-                      <p className="text-sm text-gray-600">Lahore, Punjab</p>
-                    </div>
-                  </div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: true }}
+                      className="text-right relative z-10"
+                    >
+                      <p className="text-sm font-semibold text-cyan-300 group-hover:text-cyan-200 transition-colors duration-300">Jun 2025 — Present</p>
+                      <p className="text-sm text-purple-300/60 group-hover:text-purple-300/80 transition-colors duration-300">Lahore, Punjab</p>
+                    </motion.div>
+                  </motion.div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-gray-800">
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Built complete backend systems using Django + DRF, from models to production-ready APIs</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Implemented secure authentication using JWT with full request/response validation</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Designed and tested APIs extensively in Postman</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Worked with real-time messaging using Socket.IO and optimized room/connection handling</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Collaborated with frontend teams for smooth integration across Flutter and web platforms</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Ensured clean error handling and proper database migrations for all features</span>
-                    </li>
+                  <ul className="space-y-3 text-purple-200/90 relative z-10">
+                    {[
+                      'Built complete backend systems using Django + DRF, from models to production-ready APIs',
+                      'Implemented secure authentication using JWT with full request/response validation',
+                      'Designed and tested APIs extensively in Postman',
+                      'Worked with real-time messaging using Socket.IO and optimized room/connection handling',
+                      'Collaborated with frontend teams for smooth integration across Flutter and web platforms',
+                      'Ensured clean error handling and proper database migrations for all features'
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start group/item"
+                      >
+                        <motion.span
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.4, delay: 0.5 + index * 0.1, type: "spring" }}
+                          viewport={{ once: true }}
+                          className="text-cyan-400 mr-3 mt-1 text-lg group-hover/item:text-green-400 transition-colors duration-300"
+                        >
+                          ✓
+                        </motion.span>
+                        <span className="group-hover/item:text-cyan-200 transition-colors duration-300">{item}</span>
+                      </motion.li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
             </motion.div>
+            
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300">
+              <Card className="relative bg-gradient-to-br from-cyan-900/30 to-cyan-800/10 border border-cyan-500/30 hover:border-purple-400/50 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-500 backdrop-blur-sm overflow-hidden group">
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"></div>
+                
                 <CardHeader>
-                  <div className="flex justify-between items-start flex-wrap gap-4">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="flex justify-between items-start flex-wrap gap-4 relative z-10"
+                  >
                     <div>
-                      <CardTitle className="text-2xl">Python Developer</CardTitle>
-                      <CardDescription className="text-lg mt-1">Digital Optimizer</CardDescription>
+                      <CardTitle className="text-2xl text-cyan-200 group-hover:text-purple-200 transition-colors duration-300">Python Developer</CardTitle>
+                      <CardDescription className="text-lg mt-1 text-cyan-300/70 group-hover:text-cyan-300 transition-colors duration-300">Digital Optimizer</CardDescription>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-semibold text-gray-700">Jul 2023 — Mar 2024</p>
-                      <p className="text-sm text-gray-600">UK</p>
-                    </div>
-                  </div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: true }}
+                      className="text-right relative z-10"
+                    >
+                      <p className="text-sm font-semibold text-purple-300 group-hover:text-purple-200 transition-colors duration-300">Jul 2023 — Mar 2024</p>
+                      <p className="text-sm text-cyan-300/60 group-hover:text-cyan-300/80 transition-colors duration-300">UK</p>
+                    </motion.div>
+                  </motion.div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-gray-800">
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Developed machine learning models to enhance predictive analytics</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Collaborated with data scientists to optimize algorithms and improve accuracy</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2 mt-1">✓</span>
-                      <span>Engaged in code reviews to maintain high-quality standards and best practices</span>
-                    </li>
+                  <ul className="space-y-3 text-cyan-200/90 relative z-10">
+                    {[
+                      'Developed machine learning models to enhance predictive analytics',
+                      'Collaborated with data scientists to optimize algorithms and improve accuracy',
+                      'Engaged in code reviews to maintain high-quality standards and best practices'
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start group/item"
+                      >
+                        <motion.span
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.4, delay: 0.5 + index * 0.1, type: "spring" }}
+                          viewport={{ once: true }}
+                          className="text-green-400 mr-3 mt-1 text-lg group-hover/item:text-cyan-400 transition-colors duration-300"
+                        >
+                          ✓
+                        </motion.span>
+                        <span className="group-hover/item:text-cyan-100 transition-colors duration-300">{item}</span>
+                      </motion.li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -1161,34 +1399,85 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-30 bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="education" className="py-20 bg-[#1a0a2e] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-12"
           >
-            Education
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Education
+            </span>
           </motion.h2>
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -5, scale: 1.02 }}
           >
-            <Card className="bg-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <Card className="relative bg-gradient-to-br from-cyan-900/40 to-cyan-800/20 border border-cyan-500/30 hover:border-purple-400/50 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-500 backdrop-blur-sm overflow-hidden group">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"></div>
+              
               <CardHeader>
-                <div className="flex justify-between items-start flex-wrap gap-4">
-                  <div>
-                    <CardTitle className="text-2xl">BS Software Engineering</CardTitle>
-                    <CardDescription className="text-lg mt-1">The University of Lahore</CardDescription>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm font-semibold text-gray-700">Sept 2020 — Aug 2024</p>
-                    <p className="text-sm text-gray-600">Lahore</p>
-                    <p className="text-sm font-semibold text-gray-700 mt-1">GPA: 3.21/4.0</p>
-                  </div>
-                </div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="flex justify-between items-start flex-wrap gap-4 relative z-10"
+                >
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <CardTitle className="text-2xl text-cyan-200 group-hover:text-purple-200 transition-colors duration-300">BS Software Engineering</CardTitle>
+                    <CardDescription className="text-lg mt-1 text-cyan-300/70 group-hover:text-cyan-300 transition-colors duration-300">The University of Lahore</CardDescription>
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="text-right relative z-10"
+                  >
+                    <motion.p 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-sm font-semibold text-purple-300 group-hover:text-purple-200 transition-colors duration-300"
+                    >
+                      Sept 2020 — Aug 2024
+                    </motion.p>
+                    <motion.p 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.7 }}
+                      viewport={{ once: true }}
+                      className="text-sm text-cyan-300/60 group-hover:text-cyan-300/80 transition-colors duration-300"
+                    >
+                      Lahore
+                    </motion.p>
+                    <motion.p 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.8 }}
+                      viewport={{ once: true }}
+                      className="text-sm font-semibold text-purple-300 group-hover:text-purple-200 transition-colors duration-300 mt-1"
+                    >
+                      GPA: 3.21/4.0
+                    </motion.p>
+                  </motion.div>
+                </motion.div>
               </CardHeader>
             </Card>
           </motion.div>
@@ -1196,21 +1485,26 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-30 bg-black text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section id="contact" className="py-20 bg-gradient-to-b from-[#1a0a2e] to-[#0a0a1a] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-8 text-white"
+            className="text-4xl font-bold mb-8"
           >
-            Get In Touch
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Get In Touch
+            </span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-100 text-lg mb-8"
+            className="text-purple-200/90 text-lg mb-8"
           >
             I&apos;m always interested in new opportunities and exciting backend development projects. 
             Let&apos;s discuss how we can work together to build scalable APIs and robust backend systems.
@@ -1222,10 +1516,10 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Card className="max-w-md mx-auto bg-gray-800 border-gray-700 hover:shadow-xl transition-shadow duration-300">
+            <Card className="max-w-md mx-auto bg-gradient-to-br from-purple-900/50 to-purple-800/20 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-300 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-white">Send me a message</CardTitle>
-                <CardDescription className="text-gray-300">
+                <CardTitle className="text-purple-200">Send me a message</CardTitle>
+                <CardDescription className="text-purple-300/70">
                   Fill out the form below and I&apos;ll get back to you as soon as possible.
                 </CardDescription>
               </CardHeader>
@@ -1241,7 +1535,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       placeholder="Your name" 
                       required
-                      className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
+                      className="bg-purple-900/30 border-purple-500/30 text-purple-200 placeholder:text-purple-400/50 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                     />
                   </motion.div>
                   <motion.div
@@ -1255,10 +1549,10 @@ export default function Home() {
                       placeholder="Your email" 
                       type="email"
                       required
-                      className={`bg-gray-800 text-white placeholder:text-gray-400 transition-colors duration-300 ${
+                      className={`bg-purple-900/30 text-purple-200 placeholder:text-purple-400/50 transition-all duration-300 ${
                         emailError 
-                          ? 'border-red-500 focus:border-red-400' 
-                          : 'border-gray-600 focus:border-purple-400'
+                          ? 'border-red-500 focus:border-red-400 focus:ring-2 focus:ring-red-400/20' 
+                          : 'border-purple-500/30 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20'
                       }`}
                     />
                     {emailError && (
@@ -1281,7 +1575,7 @@ export default function Home() {
                       onChange={handleInputChange}
                       placeholder="Your message" 
                       required
-                      className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-400 transition-colors duration-300"
+                      className="bg-purple-900/30 border-purple-500/30 text-purple-200 placeholder:text-purple-400/50 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                       rows={4}
                     />
                   </motion.div>
@@ -1314,10 +1608,10 @@ export default function Home() {
                     <Button 
                       type="submit"
                       disabled={isSubmitting || !!emailError}
-                      className={`w-full transition-colors duration-300 ${
+                      className={`w-full transition-all duration-300 ${
                         isSubmitting || emailError
-                          ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
-                          : 'bg-white text-black hover:bg-purple-500 hover:text-white'
+                          ? 'bg-purple-800/50 text-purple-300/50 cursor-not-allowed' 
+                          : 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-400 hover:to-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]'
                       }`}
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -1341,8 +1635,8 @@ export default function Home() {
               <Button 
                 onClick={copyEmailToClipboard}
                 variant="outline" 
-                className={`bg-white text-black hover:bg-purple-500 hover:text-white transition-colors duration-300 ${
-                  emailCopied ? 'bg-green-500 text-white border-green-500' : ''
+                className={`bg-gradient-to-r from-cyan-500 to-purple-600 text-white border-cyan-400/50 hover:from-cyan-400 hover:to-purple-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300 ${
+                  emailCopied ? 'bg-gradient-to-r from-green-500 to-emerald-600 border-green-400' : ''
                 }`}
               >
                 {emailCopied ? 'Email Copied! 📧' : 'Email Me'}
@@ -1366,15 +1660,15 @@ export default function Home() {
 
       {/* Project Image Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[95vh] overflow-hidden">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-2xl font-semibold">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-gradient-to-br from-[#1a0a2e] to-[#0a0a1a] border border-purple-500/30 rounded-lg max-w-6xl w-full max-h-[95vh] overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.3)]">
+            <div className="flex justify-between items-center p-4 border-b border-purple-500/30">
+              <h3 className="text-2xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 {projectData[selectedProject as keyof typeof projectData]?.name} - Project Details
               </h3>
               <button
                 onClick={closeProjectModal}
-                className="text-gray-500 hover:text-gray-700 text-2xl"
+                className="text-purple-300 hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
               >
                 ×
               </button>
@@ -1382,7 +1676,7 @@ export default function Home() {
             
             <div className="flex h-[80vh]">
               {/* Left side - Images */}
-              <div className="w-1/2 p-4 border-r">
+              <div className="w-1/2 p-4 border-r border-purple-500/30">
                 <div className="relative h-96">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -1398,13 +1692,13 @@ export default function Home() {
                   {/* Navigation arrows */}
                   <button
                     onClick={prevImage}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-purple-900/80 backdrop-blur-sm border border-purple-500/50 text-cyan-300 p-3 rounded-full hover:bg-purple-800/90 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-300"
                   >
                     ←
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-900/80 backdrop-blur-sm border border-purple-500/50 text-cyan-300 p-3 rounded-full hover:bg-purple-800/90 hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-300"
                   >
                     →
                   </button>
@@ -1412,10 +1706,10 @@ export default function Home() {
                 
                 {/* Image counter and description */}
                 <div className="mt-4 flex justify-between items-center">
-                  <p className="text-gray-600">
+                  <p className="text-purple-300">
                     {currentImageIndex + 1} of {projectData[selectedProject as keyof typeof projectData]?.images.length} images
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-purple-400/70">
                     {projectData[selectedProject as keyof typeof projectData]?.images[currentImageIndex]?.alt}
                   </p>
                 </div>
@@ -1426,8 +1720,8 @@ export default function Home() {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 ${
-                        index === currentImageIndex ? 'border-blue-500' : 'border-gray-300'
+                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                        index === currentImageIndex ? 'border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)] scale-110' : 'border-purple-500/30 hover:border-purple-400/50'
                       }`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1450,20 +1744,20 @@ export default function Home() {
                 <div className="space-y-6">
                   {/* Project Description */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Project Description</h4>
-                    <p className="text-gray-600 leading-relaxed">
+                    <h4 className="text-lg font-semibold text-cyan-300 mb-2">Project Description</h4>
+                    <p className="text-purple-200/90 leading-relaxed">
                       {projectData[selectedProject as keyof typeof projectData]?.description}
                     </p>
                   </div>
 
                   {/* Technologies Used */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Technologies Used</h4>
+                    <h4 className="text-lg font-semibold text-cyan-300 mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {projectData[selectedProject as keyof typeof projectData]?.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-200 rounded-full text-sm font-medium hover:border-cyan-400/50 hover:shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all duration-300"
                         >
                           {tech}
                         </span>
@@ -1473,12 +1767,12 @@ export default function Home() {
 
                   {/* Key Features */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Key Features</h4>
+                    <h4 className="text-lg font-semibold text-cyan-300 mb-3">Key Features</h4>
                     <ul className="space-y-2">
                       {projectData[selectedProject as keyof typeof projectData]?.features.map((feature, index) => (
                         <li key={index} className="flex items-start">
-                          <span className="text-green-500 mr-2 mt-1">✓</span>
-                          <span className="text-gray-600">{feature}</span>
+                          <span className="text-cyan-400 mr-2 mt-1 text-xl">✓</span>
+                          <span className="text-purple-200/90">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -1486,13 +1780,13 @@ export default function Home() {
 
                   {/* Project Links */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Project Links</h4>
+                    <h4 className="text-lg font-semibold text-cyan-300 mb-3">Project Links</h4>
                     <div className="space-y-3">
                       <a
                         href={projectData[selectedProject as keyof typeof projectData]?.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-400 hover:to-blue-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
                       >
                         <span>🌐</span>
                         <span>Live Demo</span>
@@ -1501,7 +1795,7 @@ export default function Home() {
                         href={projectData[selectedProject as keyof typeof projectData]?.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg hover:from-purple-500 hover:to-purple-700 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-all duration-300"
                       >
                         <span>📁</span>
                         <span>GitHub Repository</span>
