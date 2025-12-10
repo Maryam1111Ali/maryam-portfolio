@@ -41,10 +41,10 @@ export default function Home() {
       liveUrl: 'https://rishta-app-demo.com',
       githubUrl: 'https://github.com/yourusername/rishta-app',
       images: [
-        { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop', alt: 'Rishta App - Homepage' },
-        { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', alt: 'Rishta App - User Profiles' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'Rishta App - Admin Panel' },
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'Rishta App - Search & Filter' }
+        { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop', alt: 'Mehrum App - White Rose Wedding Engagement' },
+        { src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop', alt: 'Mehrum App - Boy and Girl Meeting' },
+        { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop', alt: 'Mehrum App - Engagement Ring' },
+        { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=600&fit=crop', alt: 'Mehrum App - Wedding Engagement Ceremony' }
       ]
     },
     'arabsocials': {
@@ -62,11 +62,11 @@ export default function Home() {
       liveUrl: 'https://arabsocials-demo.com',
       githubUrl: 'https://github.com/yourusername/arabsocials',
       images: [
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'ArabSocials - Community Feed' },
-        { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', alt: 'ArabSocials - User Profiles' },
-        { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop', alt: 'ArabSocials - Post Creation' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'ArabSocials - Comments System' },
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'ArabSocials - Country Restrictions' }
+        { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop', alt: 'Arab Socials - Social Media Event' },
+        { src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop', alt: 'Arab Socials - Community Gathering' },
+        { src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop', alt: 'Arab Socials - Social Networking' },
+        { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop', alt: 'Arab Socials - Group Event' },
+        { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop', alt: 'Arab Socials - Social Platform' }
       ]
     },
     'nestly': {
@@ -84,12 +84,12 @@ export default function Home() {
       liveUrl: 'https://nestly-demo.com',
       githubUrl: 'https://github.com/yourusername/nestly',
       images: [
-        { src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop', alt: 'Nestly - Property Listings' },
-        { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop', alt: 'Nestly - Property Details' },
-        { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', alt: 'Nestly - User Authentication' },
-        { src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop', alt: 'Nestly - Search & Filters' },
-        { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop', alt: 'Nestly - Favorites' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'Nestly - Admin Dashboard' }
+        { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop', alt: 'Nestly - Modern House Property' },
+        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', alt: 'Nestly - Luxury Home' },
+        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop', alt: 'Nestly - Property Interior' },
+        { src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop', alt: 'Nestly - Apartment Building' },
+        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop', alt: 'Nestly - Real Estate Property' },
+        { src: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop', alt: 'Nestly - Property Exterior' }
       ]
     },
     'listico': {
@@ -111,13 +111,13 @@ export default function Home() {
       liveUrl: 'https://listico-demo.com',
       githubUrl: 'https://github.com/yourusername/listico',
       images: [
-        { src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop', alt: 'Listico - Property Management' },
-        { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop', alt: 'Listico - Property Creation' },
-        { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', alt: 'Listico - Image Upload' },
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'Listico - Notifications' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'Listico - Analytics' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'Listico - Admin Panel' },
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'Listico - Contact System' }
+        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop', alt: 'Listico - Canadian Real Estate Property' },
+        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop', alt: 'Listico - Modern Condo' },
+        { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop', alt: 'Listico - Luxury Property' },
+        { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop', alt: 'Listico - Property Listing' },
+        { src: 'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&h=600&fit=crop', alt: 'Listico - Real Estate Home' },
+        { src: 'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&h=600&fit=crop', alt: 'Listico - Property View' },
+        { src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop', alt: 'Listico - Property Interior Design' }
       ]
     },
     'booking-app': {
@@ -136,9 +136,10 @@ export default function Home() {
       liveUrl: 'https://booking-app-demo.com',
       githubUrl: 'https://github.com/yourusername/booking-app',
       images: [
-        { src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=300&fit=crop', alt: 'Booking App - Dashboard' },
-        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop', alt: 'Booking App - Organization Management' },
-        { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop', alt: 'Booking App - Booking Creation' }
+        { src: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop', alt: 'Booking App - Calendar Booking System' },
+        { src: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop', alt: 'Booking App - Appointment Calendar' },
+        { src: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop', alt: 'Booking App - Schedule Management' },
+        { src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop', alt: 'Booking App - Online Booking' }
       ]
     },
     'ai-education-recommendation': {
@@ -158,10 +159,11 @@ export default function Home() {
       liveUrl: 'https://ai-education-recommendation-demo.com',
       githubUrl: 'https://github.com/yourusername/ai-education-recommendation',
       images: [
-        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop', alt: 'AI Education System - Dashboard' },
-        { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', alt: 'AI Education System - Questionnaire' },
-        { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop', alt: 'AI Education System - Recommendations' },
-        { src: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop', alt: 'AI Education System - Counselor Matching' }
+        { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop', alt: 'AI Education - Students Learning' },
+        { src: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop', alt: 'AI Education - Counseling Session' },
+        { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop', alt: 'AI Education - Career Guidance' },
+        { src: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop', alt: 'AI Education - Airplane Pilot Career' },
+        { src: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop', alt: 'AI Education - Aviation Career' }
       ]
     },
     'sentiment-analysis': {
@@ -181,9 +183,11 @@ export default function Home() {
       liveUrl: 'https://sentiment-analysis-demo.com',
       githubUrl: 'https://github.com/yourusername/sentiment-analysis',
       images: [
-        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop', alt: 'Sentiment Analysis - Data Processing' },
-        { src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=300&fit=crop', alt: 'Sentiment Analysis - Model Training' },
-        { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop', alt: 'Sentiment Analysis - Results' }
+        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', alt: 'Sentiment Analysis - Data Visualization' },
+        { src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop', alt: 'Sentiment Analysis - AI and Machine Learning' },
+        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', alt: 'Sentiment Analysis - Model Results' },
+        { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop', alt: 'Sentiment Analysis - Analytics Dashboard' },
+        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', alt: 'Sentiment Analysis - Code and Data' }
       ]
     },
     'ml-models-training': {
@@ -203,9 +207,10 @@ export default function Home() {
       liveUrl: 'https://ml-models-training-demo.com',
       githubUrl: 'https://github.com/yourusername/ml-models-training',
       images: [
-        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop', alt: 'ML Training - Data Analysis' },
-        { src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=300&fit=crop', alt: 'ML Training - Model Development' },
-        { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop', alt: 'ML Training - Results' }
+        { src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop', alt: 'ML Training - Machine Learning Models' },
+        { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop', alt: 'ML Training - Data Science Analytics' },
+        { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop', alt: 'ML Training - Model Training Process' },
+        { src: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop', alt: 'ML Training - Algorithm Development' }
       ]
     }
   };
@@ -787,12 +792,13 @@ export default function Home() {
                   
                   {/* Simple image counter */}
                   <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-                    3 Images
+                    4 Images
                   </div>
                   
                   {/* Simple dots */}
                   <div className="absolute bottom-2 right-2 flex gap-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                   </div>
@@ -858,12 +864,13 @@ export default function Home() {
                   
                   {/* Simple image counter */}
                   <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-                    4 Images
+                    5 Images
                   </div>
                   
                   {/* Simple dots */}
                   <div className="absolute bottom-2 right-2 flex gap-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
@@ -929,12 +936,14 @@ export default function Home() {
                   
                   {/* Simple image counter */}
                   <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-                    3 Images
+                    5 Images
                   </div>
                   
                   {/* Simple dots */}
                   <div className="absolute bottom-2 right-2 flex gap-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
+                    <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                   </div>
@@ -999,12 +1008,13 @@ export default function Home() {
                   
                   {/* Simple image counter */}
                   <div className="absolute top-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-                    3 Images
+                    4 Images
                   </div>
                   
                   {/* Simple dots */}
                   <div className="absolute bottom-2 right-2 flex gap-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                     <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
                   </div>
