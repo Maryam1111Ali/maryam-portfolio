@@ -472,7 +472,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2"
               >
-                3+
+                1.5+
               </motion.div>
               <p className="text-purple-200/60 text-sm uppercase tracking-wider">Years of Experience</p>
             </motion.div>
@@ -529,9 +529,14 @@ export default function Home() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.15, y: -5 }}
-                className={`w-16 h-16 rounded-full bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-2xl font-bold shadow-lg hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 cursor-pointer border-2 border-purple-500/30`}
+                className={`w-16 h-16 rounded-full bg-gradient-to-br ${tech.gradient} flex items-center justify-center text-2xl font-bold shadow-lg hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300 cursor-pointer border-2 border-purple-500/30 relative group`}
+                title={tech.name}
               >
                 {tech.icon}
+                {/* Tooltip */}
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-purple-900/95 text-purple-200 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 border border-purple-500/50">
+                  {tech.name}
+                </div>
               </motion.div>
             ))}
           </div>
